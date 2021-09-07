@@ -16,6 +16,10 @@ def to_dec(num, base):
         power += 1
     return res
 
+git push --force origin master
+GavdzinskyiVeacheslav
+Nun4ek114455
+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Nub4ek114455
 
 n = input('Введите число: ')
 b = int(input('Введите основание числа: '))
