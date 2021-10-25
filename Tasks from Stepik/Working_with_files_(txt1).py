@@ -2,12 +2,24 @@
 Программа читает с файла построчный список с оценками из 4-ёх элементов(Имя студента и три оценки).
 Выводит среднюю оценку строки и всех столбцов по первой, второй и третей оценке.
 Округляет ответ в(float) до 9 знака после запятой.
+
+Для теста:
+Sample Input:
+Петров;85;92;78
+Сидоров;100;88;94
+Иванов;58;72;85
+
+Sample Output:
+85.0
+94.0
+71.666666667
+81.0 84.0 85.666666667
 """
 
 count_students, sum_grade_str = 0, 0
 sum_grade_column1, sum_grade_column2, sum_grade_column3 = [], [], []
 
-text = open("Test file(1).txt", "r", encoding='utf-8')
+text = open("file.txt", "r", encoding='utf-8')
 
 
 def add_indices_to_arr(lis_t: list, index: str):
