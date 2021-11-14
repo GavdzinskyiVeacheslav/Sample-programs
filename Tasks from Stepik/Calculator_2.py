@@ -1,4 +1,6 @@
-# Перевод числа из любой системы счисления (до шестнадцатеричной системы включительно) в десятичную систему:
+"""
+Converting a number from any number system (up to and including the hexadecimal system) to the decimal system
+"""
 
 
 def to_dec(num, base):
@@ -16,11 +18,7 @@ def to_dec(num, base):
         power += 1
     return res
 
-git push --force origin master
-GavdzinskyiVeacheslav
-Nun4ek114455
-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Nub4ek114455
 
-n = input('Введите число: ')
-b = int(input('Введите основание числа: '))
-print(f'Результат в десятичной системе: {to_dec(n,b)}')
+n = input('Enter the number: ')
+b = int(input('Enter the base of the number: '))
+print(f'Decimal Result: {to_dec(n,b)}')
