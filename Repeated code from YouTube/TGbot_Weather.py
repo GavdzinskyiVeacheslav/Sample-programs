@@ -1,6 +1,7 @@
 import telebot
 from pyowm import OWM
 from pyowm.utils.config import get_default_config
+
 config_dict = get_default_config()
 config_dict['language'] = 'ru'
 
@@ -15,15 +16,15 @@ def send_echo(message):
     w = observation.weather
     temp = w.temperature('celsius')["temp"]
 
-    answer = "В городе " + message.text + " сейчас " + w.detailed_status + "\n"
-    answer += "Температура в районе " + str(temp) + "\n\n"
+    answer = "In the town " + message.text + " now " + w.detailed_status + "\n"
+    answer += "Temperature in the area " + str(temp) + "\n\n"
 
     if temp < 10:
-        answer += "Сейчас очень холодно, одевайся как танк!"
+        answer += "It's very cold now, dress like a tank!"
     elif temp < 20:
-        answer += "Холодно, одевайся потеплее!"
+        answer += "It's cold now, dress warmly!"
     else:
-        answer += "Температура норм, одевай что угодно"
+        answer += "Normal temperature, wear whatever"
 
     bot.send_message(message.chat.id, answer)
 

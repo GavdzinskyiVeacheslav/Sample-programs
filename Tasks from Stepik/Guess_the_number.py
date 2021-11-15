@@ -42,7 +42,6 @@ def game():
     print("Кстати, у тебя будет всего 5 попыток, так что удачи =)")
     attempts = 1
     sleep(0.3)
-    # version = input('Количество своих попыток можешь установить сам:   ')
     limit = input('Введите верхнюю границу диапазона игры:    ')
     while not is_valid_right(limit):
         limit = input('Вы ввели что-то не то, введите число(цифу)!   ')
@@ -64,7 +63,7 @@ def game():
         else:
             s = "попыток"
 
-        if attempts > 5:  # int(version):
+        if attempts > 5:
             print('Попытки закончились - Ты проиграл. Было загадано число ', num)
             break
         if response < num:

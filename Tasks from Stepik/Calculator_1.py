@@ -1,4 +1,6 @@
-# Из бинарной до 9 и 16 в 10 сс.
+"""
+From binary to 9 and 16 to 10 sn
+"""
 
 
 def calculator(b, n):
@@ -14,12 +16,12 @@ def calculator(b, n):
         return sum(s)
 
 
-print('Вас приветствует калькулятор переводчик из какой-то случайной сс в десятичную сс.')
+print('Welcome to a calculator translator from some random sn to decimal sn.')
 while True:
-    print('Введите основание сс, а затем само число.')
+    print('Enter the base sn followed by the number itself.')
     base, number = int(input()), input()
-    print('Результат в десятичной сс =', calculator(base, number))
+    print('Result in decimal sn =', calculator(base, number))
     output = input(
-        'Если желаете покинуть программу, просто напишите EXIT и нажмите ENTER\nВ противном случае нажмите ENTER\n')
+        'If you want to leave the program, just write EXIT and press ENTER\notherwise press ENTER\n')
     if output == 'EXIT':
         break
