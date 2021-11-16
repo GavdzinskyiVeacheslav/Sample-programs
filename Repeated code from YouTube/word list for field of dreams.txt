@@ -1,0 +1,12 @@
+celery
+Distributed asynchronous job queue, which has wide functionality
+json
+A textual data interchange format based on JavaScript
+cookie
+A small piece of data sent by a web server and stored on the user's computer. A web client (usually a web browser) sends this piece of data to the web server as part of an HTTP request whenever it tries to open a page on the corresponding site.  It is used to save data on the user's side 
+gitflow
+A methodology for working with Git that determines what kinds of branches a project needs and how to merge between them
+docker
+Software for automation of deployment and management of applications in environments with support for containerization, application containerizer
+redis
+Open source resident NoSQL database management system operating with key-value data structures
