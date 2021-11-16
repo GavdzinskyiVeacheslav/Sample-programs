@@ -1,9 +1,9 @@
 """
-Программа читает с файла построчный список с оценками из 4-ёх элементов(Имя студента и три оценки).
-Выводит среднюю оценку строки и всех столбцов по первой, второй и третей оценке.
-Округляет ответ в(float) до 9 знака после запятой.
+The program reads from a file a line-by-line list with grades of 4 elements (Student name and three grades).
+Displays the average score for the row and all columns for the first, second, and third scores.
+Rounds the answer in (float) to the 9th decimal place.
 
-Для теста:
+For tests:
 Sample Input:
 Петров;85;92;78
 Сидоров;100;88;94
@@ -14,6 +14,7 @@ Sample Output:
 94.0
 71.666666667
 81.0 84.0 85.666666667
+
 """
 
 count_students, sum_grade_str = 0, 0
@@ -23,13 +24,13 @@ text = open("file.txt", "r", encoding='utf-8')
 
 
 def add_indices_to_arr(lis_t: list, index: str):
-    """ Эта функция - создаёт список чисел столбца по индексам строки.
-    Например все первые или все вторые элементы строки """
+    """ This function - creates a list of column numbers by row indices.
+    For example, all the first or all the second elements of the string"""
     return lis_t.append(int(index))
 
 
 def average(x: list):
-    """ Эта функция - вычисляет среднее арифметческое оценок столбцов """
+    """ This function - calculates the arithmetic mean of the column scores """
     return round(sum(x) / count_students, 9)
 
 

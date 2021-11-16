@@ -1,16 +1,15 @@
 """
-Программа принимает на  вход список игр футбольных команд с результатом
-матча и выводит сводную таблицу результатов всех матчей.
-За победу команде начисляется 3 очка, за поражение — 0, за ничью — 1.
-Формат ввода следующий:
-В первой строке указано целое число nn — количество завершенных игр.
-После этого идет nn строк, в которых записаны результаты игры в следующем формате:
-Первая_команда;Забито_первой_командой;Вторая_команда;Забито_второй_командой
+The program takes as input a list of games of football teams with the result
+match and displays a summary table of the results of all matches.
+For a victory, a team is awarded 3 points, for a defeat - 0, for a draw - 1.
+The input format is as follows:
+The first line contains an integer nn - the number of completed games.
+After that, nn lines follow, in which the results of the game are written in the following format:
+First_command; Scored by_first_command; Second_team; Scored by_second_command
 
-Вывод программы необходимо оформить следующим образом:
-Команда:Всего_игр Побед Ничьих Поражений Всего_очков
-
-Пример:
+The output of the program must be formatted as follows:
+Team: Total_games Wins Draw Losses Total_points
+For tests:
 Sample Input:
 3
 Спартак;9;Зенит;10
@@ -23,6 +22,7 @@ Sample Output:
 Локомотив:2 2 0 0 6
 
 """
+
 import collections
 
 results = collections.defaultdict(list)

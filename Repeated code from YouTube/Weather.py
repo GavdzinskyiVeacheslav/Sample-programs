@@ -1,3 +1,5 @@
+""" The program receives weather data from the server for the entered city and tells you how to dress """
+
 from pyowm import OWM
 from pyowm.utils.config import get_default_config
 config_dict = get_default_config()

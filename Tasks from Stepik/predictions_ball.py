@@ -1,32 +1,35 @@
+""" Magic ball 8 (ball of fate) is a comic way to predict the future. The program should ask the user to ask a question
+in order to randomly answer it."""
+
 from random import choice
 from time import sleep
 
-answers = ['Бесспорно', 'Мне кажется - да', 'Пока не ясно, попробуй снова', 'Даже не думай',
-           'Предрешено', 'Вероятнее всего', 'Спроси позже', 'Мой ответ - нет', 'Никаких сомнений',
-           'Хорошие перспективы', 'Лучше не рассказывать', 'По моим данным - нет', 'Определённо да',
-           'Знаки говорят - да', 'Сейчас нельзя предсказать', 'Перспективы не очень хорошие',
-           'Можешь быть уверен в этом', 'Да', 'Сконцентрируйся и спроси опять', 'Весьма сомнительно']
+answers = ['Indisputably', 'I think so', "It's not clear yet, try again", 'Do not even think',
+           'A foregone conclusion', 'Most likely', 'Ask later', 'My answer is - no', 'Without any doubts',
+           'Good prospects', 'Better not to tell', 'According to my data - no', 'Definitely yes',
+           'The signs say yes', "Can't predict now", 'Prospects are not very good',
+           'You can be sure of this', 'Yes', 'Concentrate and ask again', 'Highly doubtful']
 
 sleep(0.5)
-print('Привет Мир, Я магический шар, и я знаю ответ на любой твой вопрос.')
+print('Hello World, I am a magic ball, and I know the answer to any of your questions.')
 
 sleep(0.2)
-name = input('Как тебя зовут? --- ')
-print('Привет', name.title())
+name = input('What is your name? --- ')
+print('Hello', name.title())
 
-answer = 'да'
+answer = 'yes'
 
-while answer.lower().strip() == 'да':
+while answer.lower().strip() == 'yes':
     sleep(0.2)
-    question = input('Справшивай: ')
+    question = input('Ask: ')
     sleep(0.2)
     print(choice(answers))
-    answer = input('Хочешь спросить что то ещё? Введи да или нет --- ')
-    while answer != 'да' or answer != 'нет':
-        if answer == 'нет':
-            print('Возвращайся если возникнут вопросы!')
+    answer = input('Do you want to ask something else? Enter yes or no --- ')
+    while answer != 'yes' or answer != 'no':
+        if answer == 'no':
+            print('Come back if you have any questions!')
             break
-        elif answer == 'да':
+        elif answer == 'yes':
             break
         else:
-            answer = input('Вы ввели что-то не то. Введите Да или Нет! --- ').lower()
+            answer = input('You entered something wrong. Enter Yes or No! --- ').lower()

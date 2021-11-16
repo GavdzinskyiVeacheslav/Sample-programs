@@ -1,3 +1,5 @@
+""" a telegram bot that responds with a weather forecast for the entered city. only works locally """
+
 import telebot
 from pyowm import OWM
 from pyowm.utils.config import get_default_config

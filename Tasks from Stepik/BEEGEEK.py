@@ -1,34 +1,29 @@
 """
-Действительный пароль BEEGEEK банка имеет вид a:b:c, где a, b и c – натуральные числа. Поскольку основатель BEEGEEK
-фанатеет от математики, то он решил:
+A valid BEEGEEK bank password is a: b: c, where a, b and c are natural numbers. Since the founder of BEEGEEK
+is a fan of math, then he decided:
 
-число a – должно быть палиндромом;
-число b – должно быть простым;
-число c – должно быть четным.
-Напишите функцию is_valid_password(password),которая принимает в качестве аргумента строковое значение пароля password
-и возвращает значение True если пароль является действительным паролем BEEGEEK банка и False в противном случае.
+* number a - must be palindrome
+* number b - must be prime
+* number c - must be even
 
-Примечание. Следующий программный код:
-print(is_valid_password('1221:101:22'))
-print(is_valid_password('565:30:50'))
-print(is_valid_password('112:7:9'))
-print(is_valid_password('1221:101:22:22'))
+Write a function is_valid_password (password) that takes the password string value as an argument
+and returns True if the password is a valid BEEGEEK bank password and False otherwise.
 
-должен выводить:
-True
-False
-False
-False
+For tests:
+'1221:101:22' -- True
+'565:30:50' -- False
+'112:7:9' -- False
+'1221:101:22:22' -- False
 
 """
 
 
-def is_valid_pin(pincode):
+def is_valid_pin(pincode: list):
     """ Checking if all three properties match """
     if len(pincode) > 3:
         return False
 
-    def is_prime(a):
+    def is_prime(a: str):
         """ Checking for a prime number """
         if int(a) == 1:
             return False
@@ -37,14 +32,14 @@ def is_valid_pin(pincode):
                 return False
         return True
 
-    def is_palindrome(b):
+    def is_palindrome(b: str):
         """ Palindromicity check """
         for i in range(0, len(b) // 2):
             if b[i] != b[len(b) - i - 1]:
                 return False
         return True
 
-    def is_even(c):
+    def is_even(c: str):
         """ Parity check """
         if int(c) % 2 == 0:
             return True

@@ -1,6 +1,4 @@
-"""
-From binary to 9 and 16 to 10 sn
-"""
+""" From binary to 9 and 16 to 10 sn """
 
 
 def calculator(b, n):

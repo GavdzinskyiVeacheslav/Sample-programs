@@ -1,3 +1,7 @@
+""" The program generates a specified number of passwords and includes a smart setting for the password length,
+as well as which characters you want to include and which ones to exclude. """
+
+
 from random import choice
 
 numbers = '0123456789'
@@ -7,7 +11,8 @@ punctuation = '!#$%&*+-=?@^_.'
 chars = ''
 
 
-def request_number(message):
+def request_number(message: str):
+    """This function checks if the user entered a digit exactly, if not, asks again"""
     while True:
         result = input(message)
 
@@ -15,66 +20,72 @@ def request_number(message):
             result = int(result)
             break
         else:
-            print('Вы ввели что-то не то. Введите число! --- ')
+            print('You entered something wrong. Enter the number! --- ')
     return result
 
 
 def digits():
-    question = input('Добавлять в ваш пароль цифры 0123456789 ? --- ')
-    while question != 'да' or question != 'нет':
-        if question == 'нет':
+    """Asks if to add numbers to the generated password"""
+    question = input('Add numbers 0123456789 to your password? --- ')
+    while question != 'yes' or question != 'no':
+        if question == 'no':
             return False
-        elif question == 'да':
+        elif question == 'yes':
             return True
         else:
-            question = input('Вы ввели что-то не то. Введите Да или Нет! --- ').lower()
+            question = input('You entered something wrong. Enter Yes or No! --- ').lower()
 
 
-def letters():
-    question = input('Добавлять в ваш пароль большие буквы ? --- ')
-    while question != 'да' or question != 'нет':
-        if question == 'нет':
+def upper_case():
+    """Asks if to add uppercase letters to the generated password"""
+    question = input('Add uppercase letters to your password? --- ')
+    while question != 'yes' or question != 'no':
+        if question == 'no':
             return False
-        elif question == 'да':
+        elif question == 'yes':
             return True
         else:
-            question = input('Вы ввели что-то не то. Введите Да или Нет! --- ').lower()
+            question = input('You entered something wrong. Enter Yes or No! --- ').lower()
 
 
-def strochnue():
-    question = input('Добавлять в ваш пароль маленькие буквы? --- ')
-    while question != 'да' or question != 'нет':
-        if question == 'нет':
+def lower_case():
+    """Asks if to add lowercase letters to the generated password"""
+    question = input('Add small letters to your password? --- ')
+    while question != 'yes' or question != 'no':
+        if question == 'yes':
             return False
-        elif question == 'да':
+        elif question == 'no':
             return True
         else:
-            question = input('Вы ввели что-то не то. Введите Да или Нет! --- ').lower()
+            question = input('You entered something wrong. Enter Yes or No! --- ').lower()
 
 
-def simbols():
-    question = input('Добавлять в ваш пароль символы --- ? ')
-    while question != 'да' or question != 'нет':
-        if question == 'нет':
+def symbols():
+    """Asks if to add symbols !#$%&*+-=?@^_. to the generated password"""
+    question = input('Add characters !#$%&*+-=?@^_. to your password? ---  ')
+    while question != 'yes' or question != 'no':
+        if question == 'no':
             return False
-        elif question == 'да':
+        elif question == 'yes':
             return True
         else:
-            question = input('Вы ввели что-то не то. Введите Да или Нет! --- ').lower()
+            question = input('You entered something wrong. Enter Yes or No! --- ').lower()
 
 
-def neodnoznach():
-    question = input('Исключать ли неоднозначные символы il1Lo0O? --- ')
-    while question != 'да' or question != 'нет':
-        if question == 'нет':
+def ambiguous():
+    """Asks if to add ambiguous symbols il1Lo0O to the generated password"""
+    question = input('Whether to exclude ambiguous il1Lo0O characters? --- ')
+    while question != 'yes' or question != 'no':
+        if question == 'no':
             return True
-        elif question == 'да':
+        elif question == 'yes':
             return False
         else:
-            question = input('Исключить неоднозначные символы il1Lo0O? --- ').lower()
+            question = input('Exclude ambiguous characters il1Lo0O? --- ').lower()
 
 
-def generate_password(n, le_n, char):
+def generate_password(n: int, le_n: int, char: str):
+    """ Generates and gives out passwords"""
     passwords = []
     for i in range(n):
         passwords.append(''.join(choice(char) for _ in range(le_n)))
@@ -82,25 +93,25 @@ def generate_password(n, le_n, char):
     return passwords
 
 
-print('Приветствую вас в генераторе паролей!')
-number = request_number('Введите желаемое количество паролей для генерации --- ')
-length = request_number('Введите длину пароля --- ')
+print('Welcome to the password generator!')
+number = request_number('Enter the desired number of passwords to generate --- ')
+length = request_number('Enter password length --- ')
 
 if digits():
     chars += numbers
-if letters():
+if upper_case():
     chars += lowercase_letters
-if strochnue():
+if lower_case():
     chars += uppercase_letters
-if simbols():
+if symbols():
     chars += punctuation
-if neodnoznach():
+if ambiguous():
     for _ in 'il1Lo0O':
         chars = chars.replace(_, '')
 
 if len(chars) > 0:
     print()
-    print("Пожалуйста вот ваши пароль(и):")
+    print("Please, here are your password(s):")
     print(*generate_password(number, length, chars), sep=' ')
 else:
-    print('Вы не выбрали из чего генерировать пароль! Досвидания!')
+    print('You have not chosen what to generate a password from! Goodbye!')

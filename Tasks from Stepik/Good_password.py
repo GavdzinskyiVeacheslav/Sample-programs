@@ -1,11 +1,16 @@
-
 """
-Принимает в качестве аргумента строковое значение пароля password и возвращает значение True если пароль является
-надежным и False в противном случае.
-его длина не менее 88 символов;
-он содержит как минимум одну заглавную букву (верхний регистр);
-он содержит как минимум одну строчную букву (нижний регистр);
-он содержит хотя бы одну цифру.
+The program takes the password string value password as an argument and returns
+True if the password is strong, False otherwise.
+The password is strong if:
+
+* its length is at least 8 characters
+* it contains at least one uppercase letter (uppercase)
+* it contains at least one lowercase letter (lowercase)
+* оit contains at least one digit
+
+For tests:
+'aabbCC11OP' -- True
+'abC1pu' -- False
 
 """
 

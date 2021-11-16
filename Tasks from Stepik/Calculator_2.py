@@ -1,6 +1,4 @@
-"""
-Converting a number from any number system (up to and including the hexadecimal system) to the decimal system
-"""
+""" Converting a number from any number system (up to and including the hexadecimal system) to the decimal system """
 
 
 def to_dec(num, base):

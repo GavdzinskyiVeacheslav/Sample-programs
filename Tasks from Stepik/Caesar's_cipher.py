@@ -1,3 +1,13 @@
+""" This program can encrypt and decrypt text according to the Caesar algorithm.
+Requests the user for the following data:
+
+* direction: encryption or decryption
+* alphabet language: Russian or English
+* shift step (with shift to the right)
+
+"""
+
+
 def shifr(side, alphabet, step):
     line = list(LINE)
     if alphabet == 'EN':
@@ -63,29 +73,30 @@ def shifr(side, alphabet, step):
 
 
 while True:
-    print('Вас приветствует программа шифратор.')
+    print('Welcome to the encryptor program.')
     while True:
-        stor = input('Введите, что будем делать: шифровать или дешифровать.\nSHIFR/DESHIFR\n')
+        stor = input('Enter what we will do: encrypt or decrypt.\nSHIFR/DESHIFR\n')
         if stor in {'SHIFR', 'DESHIFR'}:
             break
         else:
-            print('Некоректное слово. Введите значение из указанных на выбор')
+            print('Incorrect word. Enter a value from the following to choose from')
     while True:
-        alf = input('Введите, используемый алфавит: английский или русский.\nEN/RU\n')
+        alf = input('Enter the alphabet used: English or Russian.\nEN/RU\n')
         if alf in {'EN', 'RU'}:
             break
         else:
-            print('Некоректное слово. Введите значение из указанных на выбор')
+            print('Incorrect word. Enter a value from the following to choose from')
     while True:
-        shag = input('Введите, числовое значение сдвига.\n')
+        shag = input('Enter, numeric offset value.\n')
         if shag.isdigit():
             shag = int(shag)
             break
         else:
-            print('Некоректный символ. Введите иное значение.')
-    LINE = input('Введите текст, который нужно дешифровать или шифровать без ошибок, иначе ответ будет некоректный\n')
-    print('Вот ваша зашифрованная строка:\n', *shifr(stor, alf, shag), sep='')
-    x = input('Если вы желаете выйти из программы, то просто нажмите ENTER!!! Иначе напишите что-нибудь.\n')
+            print('Invalid character. Please enter a different value.')
+    LINE = input('Enter the text that you want to decrypt or encrypt without errors, '
+                 'otherwise the answer will be incorrect\n')
+    print('Here is your encrypted string:\n', *shifr(stor, alf, shag), sep='')
+    x = input('f you want to exit the program, just press ENTER!!! Otherwise write something.\n')
     if x == '':
-        print('Всего хорошего!')
+        print('Good luck!')
         break
