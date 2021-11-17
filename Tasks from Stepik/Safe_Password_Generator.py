@@ -81,7 +81,7 @@ def ambiguous():
         elif question == 'yes':
             return False
         else:
-            question = input('Exclude ambiguous characters il1Lo0O? --- ').lower()
+            question = input('You entered something wrong. Enter Yes or No! --- ').lower()
 
 
 def generate_password(n: int, le_n: int, char: str):
