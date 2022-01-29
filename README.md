@@ -1,1 +1,1 @@
-# Sample-programs
+# Examples of programs, that I followed during the courses, or from other training sources 
